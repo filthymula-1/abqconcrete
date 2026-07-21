@@ -5,13 +5,12 @@
 }
 
 :root {
-    --green: #72a93b;
-    --green-dark: #487621;
-    --black: #111411;
-    --charcoal: #1d211d;
-    --gray: #636a63;
-    --cream: #f4f2eb;
-    --light: #e5e7e0;
+    --green: #7cad3e;
+    --green-dark: #4e7727;
+    --black: #101310;
+    --charcoal: #1c211d;
+    --gray: #626963;
+    --cream: #f2f1eb;
     --white: #ffffff;
 }
 
@@ -35,10 +34,7 @@ a {
     color: inherit;
 }
 
-button,
-input,
-select,
-textarea {
+button {
     font: inherit;
 }
 
@@ -46,7 +42,7 @@ textarea {
 /* SHARED */
 
 .section {
-    max-width: 1200px;
+    width: min(1200px, 100%);
     margin: 0 auto;
     padding: 100px 24px;
 }
@@ -55,7 +51,7 @@ textarea {
     margin-bottom: 16px;
     font-size: 13px;
     font-weight: 800;
-    letter-spacing: 2.3px;
+    letter-spacing: 2.4px;
     text-transform: uppercase;
 }
 
@@ -69,7 +65,7 @@ textarea {
     align-items: center;
     justify-content: center;
     padding: 14px 24px;
-    border: 0;
+    border: none;
     border-radius: 3px;
     font-weight: 800;
     text-decoration: none;
@@ -95,7 +91,7 @@ textarea {
 .button-outline {
     color: var(--white);
     border: 2px solid var(--white);
-    background: rgba(0, 0, 0, 0.18);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .text-link {
@@ -111,12 +107,12 @@ textarea {
 
 .hero {
     position: relative;
-    min-height: 780px;
+    min-height: 790px;
     color: var(--white);
 
     background:
         url("images/sod.png")
-        center 48% / cover no-repeat;
+        center center / cover no-repeat;
 }
 
 .hero-overlay {
@@ -126,9 +122,9 @@ textarea {
     background:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.85) 0%,
-            rgba(0, 0, 0, 0.57) 50%,
-            rgba(0, 0, 0, 0.13) 100%
+            rgba(0, 0, 0, 0.87) 0%,
+            rgba(0, 0, 0, 0.59) 50%,
+            rgba(0, 0, 0, 0.18) 100%
         );
 }
 
@@ -139,7 +135,7 @@ textarea {
     position: relative;
     z-index: 2;
 
-    max-width: 1240px;
+    width: min(1240px, 100%);
     margin: 0 auto;
     padding: 28px 24px;
 
@@ -183,7 +179,7 @@ textarea {
 }
 
 .nav-links a:hover {
-    color: #b7df88;
+    color: #bce28d;
 }
 
 
@@ -193,9 +189,9 @@ textarea {
     position: relative;
     z-index: 2;
 
-    max-width: 1240px;
+    width: min(1240px, 100%);
     margin: 0 auto;
-    padding: 140px 24px 120px;
+    padding: 135px 24px 120px;
 }
 
 .hero-content h1 {
@@ -235,6 +231,10 @@ textarea {
         1px solid rgba(255, 255, 255, 0.13);
 }
 
+.trust-item:last-child {
+    border-right: none;
+}
+
 .trust-item strong,
 .trust-item span {
     display: block;
@@ -242,7 +242,7 @@ textarea {
 
 .trust-item span {
     margin-top: 3px;
-    color: #bdc3bc;
+    color: #bec4be;
     font-size: 14px;
 }
 
@@ -256,10 +256,9 @@ textarea {
     gap: 75px;
 }
 
-.intro-heading h2,
+.intro-section h2,
 .section-header h2,
-.benefits-heading h2,
-.contact-copy h2 {
+.about-heading h2 {
     font-size: clamp(41px, 5vw, 64px);
     line-height: 1.03;
     letter-spacing: -2.5px;
@@ -280,7 +279,7 @@ textarea {
 
 .service-card {
     position: relative;
-    min-height: 580px;
+    min-height: 570px;
     overflow: hidden;
     color: var(--white);
     background: var(--charcoal);
@@ -305,8 +304,8 @@ textarea {
     background:
         linear-gradient(
             0deg,
-            rgba(0, 0, 0, 0.87) 0%,
-            rgba(0, 0, 0, 0.06) 72%
+            rgba(0, 0, 0, 0.88) 0%,
+            rgba(0, 0, 0, 0.08) 72%
         );
 }
 
@@ -317,8 +316,8 @@ textarea {
     left: 40px;
 }
 
-.service-number {
-    color: #b6df82;
+.service-content span {
+    color: #bce28d;
     font-size: 13px;
     font-weight: 900;
 }
@@ -336,7 +335,7 @@ textarea {
 }
 
 
-/* PROJECT SECTION */
+/* PROJECTS */
 
 .section-header {
     display: grid;
@@ -391,30 +390,36 @@ textarea {
     background:
         linear-gradient(
             0deg,
-            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.88),
             transparent
         );
 }
 
 .project figcaption span {
     display: block;
-    color: #b6df82;
+    color: #bce28d;
     font-size: 12px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
 
-/* BENEFITS */
+/* ABOUT */
 
-.benefits-section {
+.about-section {
     background: var(--cream);
 }
 
-.benefits-inner {
+.about-inner {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
     gap: 75px;
+}
+
+.about-heading > p:not(.eyebrow) {
+    margin-top: 24px;
+    color: var(--gray);
+    font-size: 18px;
 }
 
 .benefits-grid {
@@ -445,136 +450,59 @@ textarea {
 }
 
 
-/* CTA */
+/* CONTACT */
 
-.cta-section {
+.contact-section {
     position: relative;
-    min-height: 520px;
+    min-height: 550px;
 
     display: grid;
     place-items: center;
 
-    padding: 85px 24px;
+    padding: 90px 24px;
 
     color: var(--white);
     text-align: center;
 
     background:
         url("images/retaining-wall.png")
-        center / cover no-repeat;
+        center center / cover no-repeat;
 }
 
-.cta-overlay {
+.contact-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.72);
+    background: rgba(0, 0, 0, 0.76);
 }
 
-.cta-content {
+.contact-content {
     position: relative;
     z-index: 2;
-    max-width: 800px;
+    max-width: 850px;
 }
 
-.cta-content h2 {
-    font-size: clamp(47px, 6vw, 76px);
+.contact-content h2 {
+    font-size: clamp(48px, 6vw, 78px);
     line-height: 1;
     letter-spacing: -3px;
 }
 
-.cta-content > p:not(.eyebrow) {
-    max-width: 620px;
+.contact-content > p:not(.eyebrow) {
+    max-width: 650px;
     margin: 22px auto 30px;
     font-size: 19px;
 }
 
-
-/* CONTACT */
-
-.contact-section {
-    display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 80px;
-
-    padding:
-        100px max(24px, calc((100% - 1152px) / 2));
-
-    color: var(--white);
-    background: var(--charcoal);
-}
-
-.contact-copy > p:not(.eyebrow) {
-    margin-top: 20px;
-    color: #bdc3bc;
+.contact-button {
+    min-width: 260px;
     font-size: 18px;
 }
 
-.contact-details {
-    margin-top: 35px;
-}
-
-.contact-details div {
-    padding: 18px 0;
-    border-top:
-        1px solid rgba(255, 255, 255, 0.14);
-}
-
-.contact-details span,
-.contact-details strong {
+.contact-note {
     display: block;
-}
-
-.contact-details span {
-    color: #b6df82;
-    font-size: 12px;
-    font-weight: 900;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-}
-
-.contact-details strong {
-    margin-top: 5px;
-    font-size: 20px;
-}
-
-.estimate-form {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
-}
-
-.estimate-form label {
-    margin-top: 15px;
-    margin-bottom: 7px;
-    font-weight: 800;
-}
-
-.estimate-form input,
-.estimate-form select,
-.estimate-form textarea {
-    width: 100%;
-    padding: 15px;
-    border:
-        1px solid rgba(255, 255, 255, 0.18);
-    border-radius: 2px;
-    color: var(--white);
-    background: #272b27;
-}
-
-.estimate-form button {
-    align-self: flex-start;
-    margin-top: 24px;
-}
-
-.form-note {
-    margin-top: 12px;
-    color: #9ca39c;
-    font-size: 12px;
+    margin-top: 13px;
+    color: #d6d9d6;
+    font-size: 13px;
 }
 
 
@@ -588,27 +516,23 @@ footer {
 
     padding: 32px max(24px, calc((100% - 1200px) / 2));
 
-    color: #b8beb8;
+    color: #b9beb9;
     background: var(--black);
 }
 
-footer strong,
-footer span {
+.footer-brand strong,
+.footer-brand span {
     display: block;
 }
 
-footer strong {
+.footer-brand strong {
     color: var(--white);
 }
 
-footer a {
+footer > a {
     color: var(--white);
     font-weight: 800;
     text-decoration: none;
-}
-
-footer > p {
-    font-size: 12px;
 }
 
 
@@ -622,8 +546,7 @@ footer > p {
 
     .intro-section,
     .section-header,
-    .benefits-inner,
-    .contact-section {
+    .about-inner {
         grid-template-columns: 1fr;
         gap: 42px;
     }
@@ -633,7 +556,7 @@ footer > p {
     }
 
     .service-card {
-        min-height: 530px;
+        min-height: 520px;
     }
 
     .project-grid {
@@ -658,11 +581,11 @@ footer > p {
     }
 
     .hero {
-        min-height: 790px;
-        background-position: 60% center;
+        min-height: 800px;
+        background-position: 58% center;
     }
 
-    .nav-button {
+    .nav-call {
         display: none;
     }
 
@@ -679,7 +602,7 @@ footer > p {
     }
 
     .hero-content h1 {
-        font-size: clamp(48px, 14vw, 69px);
+        font-size: clamp(47px, 14vw, 69px);
         letter-spacing: -2.5px;
     }
 
@@ -728,9 +651,8 @@ footer > p {
         grid-template-columns: 1fr;
     }
 
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .contact-content h2 {
+        letter-spacing: -2px;
     }
 
     footer {
